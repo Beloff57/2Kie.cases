@@ -24,7 +24,9 @@ body {
   display: flex;
   height: 100%;
   margin: 0; 
-  padding: 15px 14px;
+  padding-top: 0.938vw;
+  padding-left: 0.875vw;
+  padding-right: 0.813vw;
   box-sizing: border-box;
   margin-bottom: 23px;
   background-color: #D4D5DE;
@@ -41,7 +43,6 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 1452px;
   height: 100%;
   display: flex;
   justify-content: flex-end; 
@@ -71,7 +72,7 @@ body {
   justify-content: flex-end; 
   gap: 0px; 
   padding-top: 0px; 
-  padding-right: 1172px;
+  padding-right: 84.8vw;
 }
 
 .vertical-links {
@@ -130,18 +131,23 @@ body {
   flex: 0 0 auto;
   padding-left: 10px;
   cursor: pointer;
-  margin-right: -30px;
+  margin-right: 1.875vw;
 }
 
 .play-btn {
     position: absolute;
-    width: 34.42px;
-    height: 38.8px;
+    width: 2.25vw;
+    height: 2.25vw;
   top: 43%;
   left: 50%;
   transform: translate(-50%, -50%); /* Точное центрирование */
   z-index: 10; /* Чтобы кнопка была поверх других элементов */
   cursor: pointer;
+}
+
+.btn-play {
+  width: 2.25vw;
+  height: 2.25vw;
 }
 
 .name-studio {
@@ -199,7 +205,7 @@ body {
 
 .case-wrapper{
   display:flex;
-  gap:230px;
+  gap:2vw;
   align-items:flex-start;
   padding:0px;
 }
@@ -216,21 +222,44 @@ body {
   border-bottom:0.5px solid #2D2D2D;
   min-height:70vh;
   margin-left: 14px;
+  width: 65vw;
+}
+
+.cs-1 {
+    background-color: #F6F6F8;
+    border-radius: 0.75vw;
+    padding: 2.25vw 1.5vw;
+    margin-bottom: 0.438vw;
+}
+
+.cs-2 {
+  display: flex;
+  box-sizing: border-box;
+  width: 20vw;
+  width: 100%; /* Занимает всю ширину родителя */
+  gap: 0.438vw;
+}
+
+.fs-1, .fs-2 {
+  width: 100%; /* Изображение не будет шире родителя */
+  height: auto;    /* Сохраняем пропорции */
+  display: block;  /* Удаляем лишние отступы */
 }
 
 .case-section h2 {
     font-family: var(--krona);
-    font-size: 48px;
+    font-size: 4vw;
     color: #2D2D2D;
     line-height: 113.9%;
     font-weight: 400;
     letter-spacing: 0%;
+    margin-top: 0;
 }
 
 .case-section p {
     width: 800px;
     font-family: var(--montserrat);
-    font-size: 24px;
+    font-size: 1.25vw;
     color: #2D2D2D;
     line-height: 131%;
     font-weight: 400;
@@ -358,7 +387,7 @@ body {
   width: var(--sidebar-width);
   position: sticky;
   top: 40px;
-  height: calc(100vh - 80px);
+  height: 51vw;
   align-self:flex-start;
 }
 
@@ -525,24 +554,69 @@ body {
 
 .more-proj {
   margin-top: 120px;
-    width: 1452px;
+    width: 100%;
 }
 
-.more-proj h2 {
-    padding-left: 13px;
-    font-family: var(--krona);
-    font-size: 40px;
-    color: #2D2D2D;
-    line-height: 113.9%;
-    font-weight: 400;
+.zag-proj h3 {
+  margin-top: 1.563vw;
+  line-height: 114.2%;
+  font-weight: 700;
+  font-family: var(--montserrat);
+  margin-bottom: 1.25vw;
+  font-size: 2.5vw;
+  color: #333333;
+  padding-left: 0vw;
+  padding-bottom: 0vw;
+  text-transform: uppercase;
+}
+
+
+.zag-proj {
+  display: flex;
+  align-items: center;
+  margin-left: 0.875vw;
+}
+
+.ar-cont {
+  margin-top: 0.4vw;
+  display: inline-block; /* Чтобы корректно работали размеры */
+  transition: transform 0.3s ease; /* Плавный переход для масштабирования */
+  display: flex;
+  align-items: center;
+}
+
+.icon-wrap-1 {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0.44vw;            
+  box-sizing:border-box;    
+  border:1px solid #2D2D2D;
+  border-radius:2vw;
+  margin-left: 2vw;
+}
+
+.icon-wrap-1 .arrow-icon-1 {
+  width: 1vw;
+  height: 1vw;
+}
+
+/* Эффекты при наведении */
+.ar-cont:hover {
+  transform: scale(1.1); /* Увеличиваем контейнер на 10 % */
+}
+
+.ar-cont:hover img {
+  width: 1vw; /* Увеличиваем ширину стрелки */
+  transform: scale(1.05); /* Дополнительно масштабируем изображение */
 }
 
 .card-proj-list {
-  width: 1505px;
-  margin-left: 14px;
+  width: 98.5%;
+  margin-left: 0.875vw;
   display: flex; /* Располагаем фото в ряд */
   justify-content: space-between; /* Распределяем фото с отступами */
-  margin-bottom: 66px; 
+  margin-bottom: 2.25vw; 
 }
 
 .photo-472 {
@@ -579,11 +653,11 @@ body {
 .image-container {
   position: relative;
   overflow: hidden;          /* главное: обрезаем изображение за пределами контейнера */
-  border-radius: 10px;        /* если нужно закругление */
+  border-radius: 0.75vw;        /* если нужно закругление */
   display: block;
   width: 100%;
   height: 100%;
-  margin-right: 20px; /* Отступы между элементами */
+  margin-right: 0.375vw; /* Отступы между элементами */
 }
 
 /* картинка растягиваем по контейнеру и готовим к трансформации */
@@ -608,22 +682,31 @@ body {
 /* Группа кнопок внизу справа */
 .button-group {
   position: absolute;
-  bottom: 16px;      /* Отступ от нижнего края картинки */
-  left: 16px;     /* Отступ от правого края картинки */
+  bottom: 18.4vw;      /* Отступ от нижнего края картинки */
+  left: 0.375vw;     /* Отступ от правого края картинки */
   display: flex;
-  gap: 5px;        /* Расстояние между кнопками */
+  gap: 0.313vw;        /* Расстояние между кнопками */
+  flex-direction:row; /* Кнопки вертикально */
+}
+
+.button-group-2 {
+  position: absolute;
+  bottom: 15.8vw;      /* Отступ от нижнего края картинки */
+  left: 1.313vw;     /* Отступ от правого края картинки */
+  display: flex;
+  gap: 0.313vw;        /* Расстояние между кнопками */
   flex-direction:row; /* Кнопки вертикально */
 }
 
 /* Базовая стилизация кнопок */
 .btn-drk {
   font-family: var(--krona);
-  padding: 9px 13px;
+  padding: 0.25vw 0.62vw;
   background-color: #2D2D2D;
   color: white;
   text-decoration: none;
-  border-radius: 13px;
-  font-size: 12px;
+  border-radius: 1vw;
+  font-size: 0.75vw;
   white-space: nowrap;
   transition: background-color 0.3s ease;
 }
@@ -633,263 +716,174 @@ body {
   color: #2D2D2D;
 }
 
+.btn-wht {
+  font-family: var(--krona);
+  padding: 0.25vw 0.62vw;
+  background-color: #FFFFFF;
+  color: #2D2D2D;
+  text-decoration: none;
+  border-radius: 1vw;
+  font-size: 0.75vw;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.btn-wht:hover {
+  background-color: #2D2D2D;
+  color: #FFFFFF;
+}
+
 
 
 
 .footer {
-  height: 488px;          
-  max-height: 488px;  
-  background-color: #C9CAD4;
-  padding: 0;
-  margin: 0;
-  z-index: 10;
+  width: 100%;
+  height: 40vw;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  z-index: 20;
   position: relative;
-  width: 100vw;
   left: 0;
   right: 0;
   box-sizing: border-box;
 }
 
-.footer-container {
+.container {
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
-/* Левая часть футера */
-.footer-left {
-  padding-left: 65px;
-  padding-top: 40px;
+.top-section {
+  height: 19vw;
+  text-align: center; 
+  margin-bottom: 10.5vw;
+}
+
+.small-text {
+    display: inline-block;
+    width: 11vw;
+    text-align: center;
+    font-family: var(--montserrat);
+  font-size: 0.938vw;
+  letter-spacing: -4%;
+  color: #8E8E8E;
+  line-height: 113.9%;
+  margin-bottom: 1.5vw;
+}
+
+.actions {
+    letter-spacing: -4%;
+    line-height: 99%;
+    font-family: var(--montserrat);
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-right: 0;
-}
-
-.start-project-btn {
-  font-weight: 600;
-  letter-spacing: -3%;
-  line-height: 113.9%;
-  font-family: var(--montserrat);
-  padding: 8.47px 20px;
-  background-color: #2D2D2D;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 14px;
-  width: 165px;
-  max-width: 165px;
-  text-decoration: none;
-  padding-right: 0;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.start-project-btn:hover {
-  background-color: #FFFFFF;
-  color: #2D2D2D;
-}
-
-.social-buttons {
-  display: flex;
-  gap: 11px;
-}
-
-.yt-btn {
-  display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 6px;
+  gap: 1.563vw;
+  font-size: 4vw;
+  font-weight: 600;
 }
 
-.social-btn-2 {
-  line-height: 113.9%;
-  text-decoration: none;
-  font-family: var(--krona);
-  color: #2D2D2D;
-  padding: 8px 21.25px;
-  background: #C9CAD4;
-  border: 1px solid #2D2D2D;
-  border-radius: 23.5px;
-  font-size: 12px;
-  cursor: pointer;
-  margin: 0;
-  transition: 
-    color 0.3s ease,
-    background-color 0.3s ease,
-    transform 0.2s ease;
-}
-
-.social-btn-2:hover {
-  background-color: #2D2D2D;
+.action {
+  position: relative;
+  display: block;
+  width: fit-content;
   color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-/* Центральная часть футера */
-.footer-center {
-  padding-top: 46px;
-  text-align: left;
-  width: 30%;
-  padding-left: 350px;
+.action::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; 
+  height: 2px; 
+  background-color: #FFFFFF; 
+  transition: width 0.3s ease-in-out; 
 }
 
-.company-slogan {
-  color: #2D2D2D;
-  line-height: 113.9%;
-  font-weight: 500;
-  width: 282.1px;
-  font-size: 14px;
-  font-family: var(--montserrat);
-  margin: 0 0 10px 0;
-  font-size: 14px;
-  padding-bottom: 34px;
+.action:hover::after {
+  width: 100%;
 }
 
-.contact-email, .contact-phone {
-  line-height: 113.9%;
-  font-weight: 500;
-    font-size: 15px;
-    font-family: var(--kufam);
-  margin: 2px 0;
-  font-size: 16px;
-  color: #2D2D2D;
-}
-
-.contact-phone {
-    text-decoration: underline;
-    padding-bottom: 33px;
-}
-
-.telegram-label {
-  line-height: 113.9%;
-  font-weight: 500;
-    font-family: var(--montserrat);
-    font-size: 14px;
-  margin: 5px 0 0 0;
-  font-size: 14px;
-  color: #727272;
-}
-
-.telegram-handle {
-  line-height: 113.9%;
-  font-weight: 500;
-    font-family: var(--kufam);
-    margin: 5px 0 0 0;
-  font-size: 15px;
-  color: #2D2D2D;
-}
-
-/* Правая часть футера */
-.footer-right {
-  padding-top: 29px;
+.bottom-section {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  margin: 0;
 }
 
 .logo {
-  width: 90.94px;
-  height: 41px;
-  margin-bottom: 6.79px;
-  padding-right: 59px;
+  transition: transform 0.3s ease, 0.3s ease;
+  margin-left: 1.75vw;
+  margin-bottom: 0.739vw;
+    height: 2.177vw;
+    width: 4.828vw;
 }
 
-.copyright {
-  margin: 0 0 0 0;
-  font-size: 10px;
-  font-family: var(--krona);
-  color: #2D2D2D;
-  margin-bottom: 20.02px;
-  padding-right: 59px;
+.logo:hover {
+  transform: scale(1.2);
 }
 
-.pdf-link {
+.vertical-links-2 {
   display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-right: 0;
-  padding-right: 15px;
+  flex-direction: column; 
+  margin-bottom: 1vw;
+  margin-left: 45vw;
 }
 
-.pdf-desc {
-  color: #2D2D2D;
-  line-height: 109%;
-  font-weight: 500;
+.nav-link-2 {
+  font-size: 0.813vw;
   font-family: var(--montserrat);
-  font-size: 12px;
-  width: 130.36px;
-  flex-wrap: wrap;
-}
-
-.pdf-icon {
-  color: #2D2D2D;
+  line-height: 99.9%;
+  letter-spacing: -5%;
+  font-style: italic;
+  font-weight: 600;
+  color: #82838A; 
   text-decoration: none;
-  font-family: var(--kufam);
-  font-size: 15px;
-  background-color: #FFFFFF;
-  border-radius: 9px;
-  padding: 9.5px 19.18px;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.pdf-icon:hover {
-  background-color:#2D2D2D;
-  color: #FFFFFF;
+.nav-link-2:hover {
+  color: #FFFFFF; 
 }
 
-/* Нижний блок футера */
-.footer-bottom {
-  text-align: left;
-  margin-top: 52px;
-  padding-left: 50px;
+.nav-link-2.active {
+  color: #FFFFFF; 
 }
 
-.agency-name {
-  height: 117.42px;
-  line-height: 113.9%;
-  font-family: var(--montserrat);
-  font-size: 96px;
-  font-weight: normal;
-  color: #2D2D2D;
-  display: flex;
-  align-items: center;
-  gap: 25px; /* Отступ между частями текста */
+.right-block {
+  margin: 0;
+ height: 32px;
 }
 
-.typing-animation {
-  display: inline-block;
-  font-family: var(--montserrat);
-  font-size: 96px;
-  color: #2D2D2D;
-  white-space: nowrap;
-  overflow: hidden;
-  min-width: 0; /* Позволяет сжиматься до 0 */
-}
-
-.typing-animation::after {
-  content: '|';
-  animation: blink 0.8s step-end infinite;
-  margin-left: 5px;
-  opacity: 1;
-}
-
-@keyframes blink {
-  from, to { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.privacy-policy {
-  height: 19.04px;
-  margin-top: 10px;
-  font-size: 14px;
-  font-family: var(--krona);
-  color: #8A8A8A;
+.telegram-link-2 {
+    font-family: var(--montserrat);
+    font-size: 0.875vw;
+    line-height: 113%;
+  display: inline-flex;
+  align-items: flex-end;
+  padding: 0.438vw 0.813vw; 
+  border: 1px solid #FFFFFF; 
+  border-radius: 1.468vw; 
+  background-color: #000000; 
+  color: #FFFFFF; 
   text-decoration: none;
-  transition: 
-    text-decoration 10s ease,
-    transform 10s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 1.375vw;
+  margin-bottom: 0.666vw;
 }
 
-.privacy-policy:hover {
-  text-decoration: underline;
+.telegram-link-2:hover {
+  background-color: #FFFFFF; 
+  color: #2D2D2D; 
 }
