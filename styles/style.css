@@ -4,10 +4,10 @@
     --montserrat: "Montserrat", sans-serif;
     --krona: "Krona One", sans-serif;
     --kufam: "Kufam", sans-serif;
-    --sidebar-width: 300px;
-  --track-width: 2px;
-  --indicator-size: 14px;
-  --gap-vertical: 28px;
+    --sidebar-width: 18.75vw;
+  --track-width: 0.125vw;
+  --indicator-size: 0.875vw;
+  --gap-vertical: 1.75vw;
   --accent: #111;
   --muted: #9aa0a6;
   --bg: #f3f3f6;
@@ -397,10 +397,10 @@ body {
 
 /* Правая колонка — навигация (sticky) */
 .case-right{
-  padding-top: 190px;
+  padding-top: 11.875vw;
   width: var(--sidebar-width);
   position: sticky;
-  top: 40px;
+  top: 2.5vw;
   height: 51vw;
   align-self:flex-start;
 }
@@ -408,7 +408,7 @@ body {
 /* Внутренний контейнер: трек слева, nav справа */
 .nav-inner{
   display:flex;
-  gap:18px;
+  gap:1.125vw;
   height:100%;
   align-items:flex-start;
 }
@@ -473,20 +473,20 @@ body {
   left:100%;
   top:50%;
   transform:translateY(-50%);
-  height:2px;
+  height:0.125vw;
   background:#2D2D2D;
-  width:80px; 
-  border-radius:2px;
+  width:5vw; 
+  border-radius:0.125vw;
   z-index:4;
   transition: width 220ms cubic-bezier(.2,.9,.2,1);
 }
 .track-indicator .connector-dot{
   position:absolute;
-  right:-80px;                /* смещаем точку за конец connector */
+  right:-5vw;                /* смещаем точку за конец connector */
   top:50%;
   transform:translateY(-50%);
-  width:8px;
-  height:8px;
+  width:0.5vw;
+  height:0.5vw;
   background:#2D2D2D;
   border-radius:50%;
   z-index:5;
@@ -497,8 +497,8 @@ body {
   display:flex;
   flex-direction:column;
   gap: var(--gap-vertical);
-  padding:6px 85px;
-  width: calc(var(--sidebar-width) - 44px);
+  padding:0.375vw 5.313vw;
+  width: calc(var(--sidebar-width) - 2.75vw);
 }
 
 /* Общие стили для пунктов */
@@ -527,9 +527,9 @@ body {
 .nav-item .title{opacity:0.9;}
 
 /* Размеры: active > neighbor > small > hidden */
-.nav-item.size-large{  font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: scale(1); font-size:40px; color: #2D2D2D; font-weight:400;}
-.nav-item.size-medium{ font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: scale(.92); font-size:24px; color:#828282;}
-.nav-item.size-small{ font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: scale(.8); font-size:16px; color:#B1B1B1;}
+.nav-item.size-large{  font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: scale(1); font-size:2.5vw; color: #2D2D2D; font-weight:400;}
+.nav-item.size-medium{ font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: scale(.92); font-size:1.5vw; color:#828282;}
+.nav-item.size-small{ font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: scale(.8); font-size:1vw; color:#B1B1B1;}
 .nav-item.hidden{ font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: translateX(10px) scale(.7); }
 
 /* Final — отдельный стиль, внизу */
