@@ -20,6 +20,51 @@ body {
   overflow-x: hidden;
 }
 
+
+.fixed-bottom-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.arrow-container {
+  position: relative;
+  z-index: 2;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+}
+
+.text-container {
+    overflow: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* чтобы текст не мешал клику */
+}
+
+.text-container svg {
+      overflow: visible;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
 .hero-content {
   display: flex;
   height: 100%;
@@ -28,7 +73,7 @@ body {
   padding-left: 0.875vw;
   padding-right: 0.813vw;
   box-sizing: border-box;
-  margin-bottom: 23px;
+  margin-bottom: 0.875vw;
   background-color: #D4D5DE;
 }
 
@@ -43,20 +88,20 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: flex-end; 
   align-items: flex-start; 
-  padding: 27px 0px; 
+  padding: 1.75vw 0vw; 
   box-sizing: border-box;
 }
 
 .logo-container {
-    margin-right: 15px;
-    margin-top: 2px;
+    margin-right: 0.938vw;
+    margin-top: 0.125vw;
   flex: 0 0 auto;
-  width: 77.25px;
-  height: 34.83px;
+  width: 4.813vw;
+  height: 2.188vw;
   transition: transform 0.3s ease, 0.3s ease;
   z-index: 20;
 }
@@ -70,9 +115,9 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end; 
-  gap: 0px; 
-  padding-top: 0px; 
-  padding-right: 84.8vw;
+  gap: 0vw; 
+  padding-top: 0vw; 
+  padding-right: 85.7%;
 }
 
 .vertical-links {
@@ -82,7 +127,7 @@ body {
 }
 
 .nav-link {
-  font-size: 13px;
+  font-size: 0.813vw;
     font-family: var(--montserrat);
     line-height: 99.9%;
     letter-spacing: -5%;
@@ -101,46 +146,20 @@ body {
   color: #FFFFFF; 
 }
 
-.showreel-btn {
-  flex: 0 0 auto;
-  margin-left: 0px;
-}
-
-.showreel-btn a {
-  line-height: 113.9%;
-  font-weight:400;
-  font-family: var(--krona);
-  text-decoration: none;
-  color: #2D2D2D;
-  font-weight: 500;
-  font-size: 12px;
-  padding: 5px 15px;
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.showreel-btn a:hover {
-  background-color: #2D2D2D;
-  color: #FFFFFF;
-}
-
 .mute-btn {
-  width: 18.17px;
-  height: 18.61px;
+  width: 1.136vw;
+  height: 1.163vw;
   flex: 0 0 auto;
-  padding-left: 10px;
+  padding-left: 0.625vw;
   cursor: pointer;
   margin-right: 1.875vw;
 }
 
 .play-btn {
     position: absolute;
-    width: 2.25vw;
+    width: 3vw;
     height: 2.25vw;
-  top: 43%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Точное центрирование */
+  transform: translate(50vw, 20vw);
   z-index: 10; /* Чтобы кнопка была поверх других элементов */
   cursor: pointer;
 }
@@ -150,30 +169,19 @@ body {
   height: 2.25vw;
 }
 
-.name-studio {
-    font-family: var(--krona);
-    line-height: 1;
-  width: 433.77px;
-  text-align: left;
-  text-transform: uppercase;
-  position: absolute;
-  bottom: 5px;      
-  right: 5px;     
-  margin: 0;
-  transform: translate(-240%, -380%);
-  font-size: 64px;
-  font-weight: 500;
-  color: #FFFFFF;
-  white-space: wrap;
-}
 
 
 
 .video-block {
   position: absolute;
   margin: 0;
-  z-index: 10;
-   transform: translate(350%, -31%);
+  z-index: 30;
+   transform: translate(7vw, -11vw);
+}
+
+.b-video {
+  width: 9.688vw;
+  height: 9.688vw;
 }
 
 .play-btn-2 {
@@ -183,21 +191,27 @@ body {
   transform: translate(-50%, -20%); /* Точное центрирование */
   z-index: 10; /* Чтобы кнопка была поверх других элементов */
   cursor: pointer;
+    width: 2vw;
+  height: 2vw;
+}
+
+.btn-play2 {
+  width: 2vw;
+  height: 2vw;
 }
 
 .podpis {
   position: absolute; /* Располагаем поверх изображения */
-  bottom: -7px; /* Отступ от нижнего края (регулируйте) */
-  right: -51px; /* Отступ от правого края (регулируйте) */
-  background-color: #2D2D2D;
-  padding: 8px 12px; /* Отступы внутри подписи */
-  color: #FFFFFF; /* Цвет текста (подберите под фон) */
+  bottom: 7.438vw; /* Отступ от нижнего края (регулируйте) */
+  right: -2.5vw; /* Отступ от правого края (регулируйте) */
+  background-color: #FFFFFF;
+  padding: 0.313vw 0.5vw; /* Отступы внутри подписи */
+  color: #2D2D2D; /* Цвет текста (подберите под фон) */
   font-family: var(--montserrat);
-  font-size: 14px; /* Размер шрифта */
+  font-size: 0.75vw; /* Размер шрифта */
   line-height: 113.9%;
   font-weight: 600;
-  transform: rotate(-7.83deg); 
-  border-radius: 14px; /* Скругление углов */
+  border-radius: 0.6vw; /* Скругление углов */
 }
 
 
@@ -690,9 +704,8 @@ body {
 }
 
 .button-group-2 {
+  transform: translate(0.438vw, 38.063vw);
   position: absolute;
-  bottom: 15.8vw;      /* Отступ от нижнего края картинки */
-  left: 1.313vw;     /* Отступ от правого края картинки */
   display: flex;
   gap: 0.313vw;        /* Расстояние между кнопками */
   flex-direction:row; /* Кнопки вертикально */
@@ -705,7 +718,7 @@ body {
   background-color: #2D2D2D;
   color: white;
   text-decoration: none;
-  border-radius: 1vw;
+  border-radius: 0.563vw;
   font-size: 0.75vw;
   white-space: nowrap;
   transition: background-color 0.3s ease;
@@ -722,7 +735,7 @@ body {
   background-color: #FFFFFF;
   color: #2D2D2D;
   text-decoration: none;
-  border-radius: 1vw;
+  border-radius: 0.563vw;
   font-size: 0.75vw;
   white-space: nowrap;
   transition: background-color 0.3s ease;
@@ -738,7 +751,7 @@ body {
 
 .footer {
   width: 100%;
-  height: 40vw;
+  height: 100vh;
   background-color: #000;
   color: #fff;
   display: flex;
@@ -759,9 +772,9 @@ body {
 }
 
 .top-section {
-  height: 19vw;
+  height: 20vw;
   text-align: center; 
-  margin-bottom: 10.5vw;
+  margin-bottom: 35vh;
 }
 
 .small-text {
