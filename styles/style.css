@@ -25,10 +25,10 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 100px;
-  height: 100px;
+  width: 6.563vw;
+  height: 6.563vw;
   border-radius: 50%;
-  background-color: #333;
+  background-color: #2D2D2D;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,8 +41,8 @@ body {
 }
 
 .arrow {
-  width: 30px;
-  height: 30px;
+  width: 0.813vw;
+  height: 0.813vw;
 }
 
 .text-container {
@@ -55,12 +55,22 @@ body {
   pointer-events: none; /* чтобы текст не мешал клику */
 }
 
+.text-container text{
+  color: #FFFFFF;
+}
+
 .text-container svg {
       overflow: visible;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+svg text {
+  overflow: visible;
+  fill: #ffffff; /* белый цвет */
+  stroke: none; /* убрать обводку, если есть */
 }
 
 
@@ -233,20 +243,43 @@ body {
 .case-section{
   position: relative;
   padding:0px;
-  border-bottom:0.5px solid #2D2D2D;
-  min-height:70vh;
-  margin-left: 14px;
+  margin-left: 0.875vw;
   width: 65vw;
+  margin-bottom: 1.5vw;
 }
 
 .cs-1 {
     background-color: #F6F6F8;
     border-radius: 0.75vw;
     padding: 2.25vw 1.5vw;
-    margin-bottom: 0.438vw;
+    margin-bottom: 0.375vw;
+}
+
+.cs-1-2 {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%; /* Занимает всю ширину родителя */
+  gap: 0.438vw;
+}
+
+.cs-1 h3 {
+  font-family: var(--montserrat);
+  font-size: 1.25vw;
+  font-weight: 600;
+  line-height: 114.2%;
+  letter-spacing: -3%;
+  color: #2D2D2D;
+  margin-top: 2.875vw;
 }
 
 .cs-2 {
+    background-color: #F6F6F8;
+    border-radius: 0.75vw;
+    padding: 2.25vw 1.5vw;
+    margin-bottom: 0.438vw;
+}
+
+.cs-2-2 {
   display: flex;
   box-sizing: border-box;
   width: 20vw;
@@ -254,13 +287,46 @@ body {
   gap: 0.438vw;
 }
 
-.fs-1, .fs-2 {
+.cs-3 {
+    background-color: #F6F6F8;
+    border-radius: 0.75vw;
+    padding: 2.25vw 1.5vw;
+    margin-bottom: 0.438vw;
+}
+
+.cs-3-2 {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%; /* Занимает всю ширину родителя */
+  gap: 0.438vw;
+}
+
+.pusto-img {
+  width: 24.5%;
+}
+
+.foto1-s1 {
+  width: 60%;
+}
+
+.foto2-s1 {
+  width: 40%;
+}
+
+.fs-1 {
   width: 100%; /* Изображение не будет шире родителя */
-  height: auto;    /* Сохраняем пропорции */
+  height: 100%;    /* Сохраняем пропорции */
+  display: block;  /* Удаляем лишние отступы */
+}
+
+.fs-2 {
+  width: 100%; /* Изображение не будет шире родителя */
+  height: 100%;    /* Сохраняем пропорции */
   display: block;  /* Удаляем лишние отступы */
 }
 
 .case-section h2 {
+  width: 33vw;
     font-family: var(--krona);
     font-size: 4vw;
     color: #2D2D2D;
@@ -270,8 +336,18 @@ body {
     margin-top: 0;
 }
 
-.case-section p {
-    width: 800px;
+.case-section .p1 {
+    width: 45vw;
+    font-family: var(--montserrat);
+    font-size: 1.25vw;
+    color: #2D2D2D;
+    line-height: 131%;
+    font-weight: 400;
+    letter-spacing: -3%;
+}
+
+.case-section .p2 {
+    width: 48vw;
     font-family: var(--montserrat);
     font-size: 1.25vw;
     color: #2D2D2D;
@@ -429,11 +505,11 @@ body {
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  top:-190px;                 /* верхняя отступная точка линии */
-  width:2px;
-  height:400px;             /* дефолт — заменится JS */
+  top:-11.875vw;                 /* верхняя отступная точка линии */
+  width:0.125vw;
+  height:25vw;             /* дефолт — заменится JS */
   background:#2D2D2D;
-  border-radius:2px;
+  border-radius:0.125vw;
   z-index:1;
 }
 
@@ -442,11 +518,11 @@ body {
   position:absolute;
   left:50%;
   transform:translate(-50%, -50%); /* центрируем по центру точки */
-  width:14px;
-  height:14px;
+  width:0.875vw;
+  height:0.875vw;
   border-radius:50%;
   background:#D4D5DE;
-  border:2px solid #2D2D2D;
+  border:0.125vw solid #2D2D2D;
   z-index:2;
   /* top будет выставляться из JS */
 }
@@ -457,8 +533,8 @@ body {
   left:50%;
   transform:translateX(-50%);
   top:0;                      /* будет задаваться JS */
-  width:29px;
-  height:29px;
+  width:1.813vw;
+  height:1.813vw;
   border-radius:50%;
   background:#CDCED5;
   border:2px solid #2D2D2D;
@@ -504,11 +580,11 @@ body {
 /* Общие стили для пунктов */
 .nav-item{
   display:flex;
-  gap:10px;
+  gap:0.625vw;
   align-items:center;
   border:none;
   background:transparent;
-  padding:4px 8px;
+  padding:0.25vw 0.5vw;
   text-align:left;
   cursor:pointer;
   color: var(--muted);
@@ -521,21 +597,51 @@ body {
     font-family: var(--krona);
   color: #2D2D2D;
   font-weight:400;
-  min-width:36px;
+  min-width:1vw;
   text-align:left;
 }
 .nav-item .title{opacity:0.9;}
 
 /* Размеры: active > neighbor > small > hidden */
-.nav-item.size-large{  font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: scale(1); font-size:2.5vw; color: #2D2D2D; font-weight:400;}
-.nav-item.size-medium{ font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: scale(.92); font-size:1.5vw; color:#828282;}
-.nav-item.size-small{ font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: scale(.8); font-size:1vw; color:#B1B1B1;}
-.nav-item.hidden{ font-family: var(--krona); line-height: 113.9%; letter-spacing: 0%; transform: translateX(10px) scale(.7); }
+.nav-item.size-large{  font-family: var(--montserrat); line-height: 113.9%; letter-spacing: 0%; transform: scale(1); font-size:2.5vw; color: #2D2D2D; font-weight:600; width: 20vw;}
+.nav-item.size-medium{ font-family: var(--montserrat); line-height: 113.9%; letter-spacing: 0%; transform: scale(.92); font-size:1.5vw; color:#828282; font-weight:600;}
+.nav-item.size-small{ font-family: var(--montserrat); line-height: 113.9%; letter-spacing: 0%; transform: scale(.8); font-size:1vw; color:#B1B1B1; font-weight:600;}
+.nav-item.hidden{ font-family: var(--montserrat); line-height: 113.9%; letter-spacing: 0%; transform: translateX(10px) scale(.7); }
+
+.nav-item img {
+  display: block;
+  margin: 0vw; /* Отступ от текста */
+  width: 2.75vw; /* Базовый размер */
+  height: 2.625vw;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.nav-item.size-large img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.nav-item.size-medium img {
+  transform: scale(0.7);
+  opacity: 0.85;
+}
+
+.nav-item.size-small img {
+  transform: scale(0.5);
+  opacity: 0.7;
+}
+
+.nav-item.hidden img {
+  transform: scale(0.6);
+  opacity: 0.5;
+}
 
 /* Final — отдельный стиль, внизу */
 .nav-final{
     font-family: var(--krona);
-    font-size: 40px;
+    font-size: 2.5vw;
   color: #2D2D2D;
   line-height: 113.9%;
   letter-spacing: 0%;
@@ -546,10 +652,10 @@ body {
 
 .side-nav .nav-final {
   position: absolute;
-  left: 100px;                /* соответствует .nav-inner padding-left */
-  bottom: 220px;              /* по вкусу */
-  width: calc(100% - 56px);  /* занимает остальную ширину */
-  height: 56px;
+  left: 6.25vw;                /* соответствует .nav-inner padding-left */
+  bottom: 13.75vw;              /* по вкусу */
+  width: calc(100% - 3.5vw);  /* занимает остальную ширину */
+  height: 3.5vw;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -704,7 +810,8 @@ body {
 }
 
 .button-group-2 {
-  transform: translate(0.438vw, 38.063vw);
+  margin-top: 38.5%;
+  margin-left: 0.442%;
   position: absolute;
   display: flex;
   gap: 0.313vw;        /* Расстояние между кнопками */
