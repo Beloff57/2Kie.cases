@@ -21,118 +21,103 @@ body {
 }
 
 
-.fixed-bottom-right {
+
+.circle-btn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 6.563vw;
-  height: 6.563vw;
+  bottom: 1.25vw;
+  right: 1.25vw;
+  width: 6.5vw;
+  height: 6.5vw;
   border-radius: 50%;
-  background-color: #2D2D2D;
+  background: #2D2D2D;
+  z-index: 1000;
+  cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.circle-center {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-}
-
-.arrow-container {
-  position: relative;
   z-index: 2;
 }
 
-.arrow {
-  width: 0.813vw;
-  height: 0.813vw;
+.circle-center img {
+  width: 0.9vw;
+  height: 0.9vw;
+  transition: filter 0.4s ease;
 }
 
-.text-container {
-    overflow: visible;
+.circle-text {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* чтобы текст не мешал клику */
+  transform-origin: 50% 50%;
+  pointer-events: none;
 }
 
-.text-container text{
-  color: #FFFFFF;
+.circle-text text {
+  font-weight: 500;
+  font-family: var(--montserrat);
+  line-height: 114.2%;
+  font-size: 1.2vw;
+  letter-spacing: -4%;
+    fill: #ffffff;
+  transition: fill 0.4s ease;
 }
 
-.text-container svg {
-      overflow: visible;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.circle-btn:hover {
+  background: #ffffff;
 }
 
-svg text {
-  overflow: visible;
-  fill: #ffffff; /* белый цвет */
-  stroke: none; /* убрать обводку, если есть */
+.circle-btn:hover .circle-text text {
+  fill: #2D2D2D;
+}
+
+.circle-btn:hover .circle-center img {
+  filter: invert(1);
 }
 
 
-
-.hero-content {
-  display: flex;
-  height: 100%;
+.hero-block {
+    display: flex;
+  height: 29vw;
   margin: 0; 
-  padding-top: 0.938vw;
-  padding-left: 0.875vw;
-  padding-right: 0.813vw;
+  padding: 0;
   box-sizing: border-box;
   margin-bottom: 0.875vw;
-  background-color: #D4D5DE;
 }
 
-.hero-content img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.hero-overlay {
-  position: absolute;
+.comp-block {
+  right: 0;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: flex-end; 
-  align-items: flex-start; 
-  padding: 1.75vw 0vw; 
-  box-sizing: border-box;
+  width: 30vw;
+  height: 100%; 
+  background-color: #D4D5DE;
+  padding: 0px;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+  margin-left: 0;
 }
 
-.logo-container {
-    margin-right: 0.938vw;
-    margin-top: 0.125vw;
-  flex: 0 0 auto;
-  width: 4.813vw;
-  height: 2.188vw;
-  transition: transform 0.3s ease, 0.3s ease;
-  z-index: 20;
-}
-
-.logo-container:hover {
-  transform: scale(1.2);
-  display: block;
+.fade-on-scroll {
+  transition: opacity 0.4s ease;
 }
 
 .nav-wrapper {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-end; 
-  gap: 0vw; 
-  padding-top: 0vw; 
-  padding-right: 85.7%;
+  gap: 1.25vw; 
+  padding-top: 0.813vw; 
+  padding-right: 1.188vw;
 }
 
 .vertical-links {
-  display: inline-flex;
-  align-items: top;
+  display: flex;
   flex-direction: column; 
 }
 
@@ -149,27 +134,83 @@ svg text {
 }
 
 .nav-link:hover {
-  color: #FFFFFF; 
+  color: #2D2D2D; 
 }
 
 .nav-link.active {
+  color: #2D2D2D; 
+}
+
+.telegram-link {
+    font-family: var(--montserrat);
+    font-size: 0.875vw;
+    line-height: 113%;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.438vw 0.813vw; 
+  border: 1px solid #2D2D2D; 
+  border-radius: 1.468vw; 
+  background-color: #D4D5DE; 
+  color: #2D2D2D; 
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.telegram-link:hover {
+  background-color: #2D2D2D; 
   color: #FFFFFF; 
 }
 
+.comp-block .logo-block {
+  margin-left: 3vw;
+  margin-top: 1.813vw; 
+  margin-bottom: 18.081vw; 
+}
+
+.comp-block .logo-block img {
+  width: 23vw;
+  height: auto;
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  width: 70vw;
+  height: 100%;
+  margin: 0; 
+  padding-top: 0.938vw;
+  padding-left: 0.875vw;
+  box-sizing: border-box;
+  background-color: #D4D5DE;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .mute-btn {
+  display: flex;
+  position: absolute;
   width: 1.136vw;
   height: 1.163vw;
   flex: 0 0 auto;
-  padding-left: 0.625vw;
   cursor: pointer;
-  margin-right: 1.875vw;
+  margin-left: 67vw;
+  margin-top: 0.7vw;
+}
+
+.mute-img {
+  width: 1.125vw;
+  height: 1.125vw;
 }
 
 .play-btn {
     position: absolute;
     width: 3vw;
     height: 2.25vw;
-  transform: translate(50vw, 20vw);
+  transform: translate(34vw, 13vw);
   z-index: 10; /* Чтобы кнопка была поверх других элементов */
   cursor: pointer;
 }
@@ -184,22 +225,21 @@ svg text {
 
 .video-block {
   position: absolute;
-  margin: 0;
+  margin-top: 31vw;
   z-index: 30;
-   transform: translate(7vw, -11vw);
 }
 
 .b-video {
-  width: 9.688vw;
+  width: 23.375vw;
   height: 9.688vw;
 }
 
 .play-btn-2 {
   position: absolute;
-  top: 43%;
+  top: 38%;
   left: 50%;
-  transform: translate(-50%, -20%); /* Точное центрирование */
-  z-index: 10; /* Чтобы кнопка была поверх других элементов */
+  transform: translate(-50%, -20%); 
+  z-index: 10; 
   cursor: pointer;
     width: 2vw;
   height: 2vw;
@@ -211,17 +251,29 @@ svg text {
 }
 
 .podpis {
-  position: absolute; /* Располагаем поверх изображения */
-  bottom: 7.438vw; /* Отступ от нижнего края (регулируйте) */
-  right: -2.5vw; /* Отступ от правого края (регулируйте) */
-  background-color: #FFFFFF;
-  padding: 0.313vw 0.5vw; /* Отступы внутри подписи */
-  color: #2D2D2D; /* Цвет текста (подберите под фон) */
+  position: absolute; 
+  bottom: 11.438vw; 
+  color: #2D2D2D; 
   font-family: var(--montserrat);
-  font-size: 0.75vw; /* Размер шрифта */
+  font-size: 1.25vw; 
   line-height: 113.9%;
   font-weight: 600;
-  border-radius: 0.6vw; /* Скругление углов */
+  border-radius: 0.6vw; 
+}
+
+.tegi-v {
+  margin-top: 0.3vw;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2vw;
+}
+
+.tegv {
+  font-family: var(--montserrat);
+  font-size: 0.813vw;
+  line-height: 114.2%;
+  letter-spacing: -4%;
+  font-weight: 500;
 }
 
 
@@ -229,29 +281,30 @@ svg text {
 
 .case-wrapper{
   display:flex;
-  gap:2vw;
   align-items:flex-start;
   padding:0px;
 }
 
 /* Левая колонка — контент */
 .case-left {
-  flex:0 1 1; 
-  min-width:0;
+  width: 70vw;
+  padding-left: 0.875vw;
+  box-sizing: border-box;
 } 
 
 .case-section{
   position: relative;
   padding:0px;
-  margin-left: 0.875vw;
-  width: 65vw;
+  width: 100%;
   margin-bottom: 1.5vw;
 }
 
 .cs-1 {
     background-color: #F6F6F8;
     border-radius: 0.75vw;
-    padding: 2.25vw 1.5vw;
+    padding-left: 1.5vw;
+    padding-top: 2.25vw;
+    padding-bottom: 2.25vw;
     margin-bottom: 0.375vw;
 }
 
@@ -275,7 +328,9 @@ svg text {
 .cs-2 {
     background-color: #F6F6F8;
     border-radius: 0.75vw;
-    padding: 2.25vw 1.5vw;
+    padding-left: 1.5vw;
+    padding-top: 2.25vw;
+    padding-bottom: 2.25vw;
     margin-bottom: 0.438vw;
 }
 
@@ -290,7 +345,9 @@ svg text {
 .cs-3 {
     background-color: #F6F6F8;
     border-radius: 0.75vw;
-    padding: 2.25vw 1.5vw;
+    padding-left: 1.5vw;
+    padding-top: 2.25vw;
+    padding-bottom: 2.25vw;
     margin-bottom: 0.438vw;
 }
 
@@ -473,203 +530,51 @@ svg text {
 
 /* Правая колонка — навигация (sticky) */
 .case-right{
-  padding-top: 11.875vw;
-  width: var(--sidebar-width);
+  padding-top: 1vw;
+  width: 30vw;
   position: sticky;
-  top: 2.5vw;
+  top: 0vw;
   height: 51vw;
   align-self:flex-start;
 }
 
 /* Внутренний контейнер: трек слева, nav справа */
 .nav-inner{
+  padding-left: 3vw;
   display:flex;
   gap:1.125vw;
   height:100%;
   align-items:flex-start;
 }
 
-/* Трек (полоса + индикатор) */
-.track{
-  position:relative;
-  width: 25px;
-  height: 100%;
-  padding-top:8px;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
+.nav-title-wrap {
+  padding-left: 5vw;
+  position: relative;
+  width: 20vw;
 }
 
-/* вертикальная линия — высота будем задавать из JS */
-.track-line{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  top:-11.875vw;                 /* верхняя отступная точка линии */
-  width:0.125vw;
-  height:25vw;             /* дефолт — заменится JS */
-  background:#2D2D2D;
-  border-radius:0.125vw;
-  z-index:1;
-}
-
-/* маленькая окружность внизу — конец трека напротив Final */
-.track-end-dot{
-  position:absolute;
-  left:50%;
-  transform:translate(-50%, -50%); /* центрируем по центру точки */
-  width:0.875vw;
-  height:0.875vw;
-  border-radius:50%;
-  background:#D4D5DE;
-  border:0.125vw solid #2D2D2D;
-  z-index:2;
-  /* top будет выставляться из JS */
-}
-
-/* ИНДИКАТОР (круг): позиционируем по top, translateX(-50%) только на X */
-.track-indicator{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  top:0;                      /* будет задаваться JS */
-  width:1.813vw;
-  height:1.813vw;
-  border-radius:50%;
-  background:#CDCED5;
-  border:2px solid #2D2D2D;
-  transition: top 260ms cubic-bezier(.2,.9,.2,1);
-  z-index:5;
-  display:block;
-}
-
-/* Горизонтальная полоска (connector) от индикатора вправо и маленькая точка на конце */
-.track-indicator .connector{
-  position:absolute;
-  left:100%;
-  top:50%;
-  transform:translateY(-50%);
-  height:0.125vw;
-  background:#2D2D2D;
-  width:5vw; 
-  border-radius:0.125vw;
-  z-index:4;
-  transition: width 220ms cubic-bezier(.2,.9,.2,1);
-}
-.track-indicator .connector-dot{
-  position:absolute;
-  right:-5vw;                /* смещаем точку за конец connector */
-  top:50%;
-  transform:translateY(-50%);
-  width:0.5vw;
-  height:0.5vw;
-  background:#2D2D2D;
-  border-radius:50%;
-  z-index:5;
-}
-
-/* Navigation list */
-.side-nav{
-  display:flex;
-  flex-direction:column;
-  gap: var(--gap-vertical);
-  padding:0.375vw 5.313vw;
-  width: calc(var(--sidebar-width) - 2.75vw);
-}
-
-/* Общие стили для пунктов */
-.nav-item{
-  display:flex;
-  gap:0.625vw;
-  align-items:center;
-  border:none;
-  background:transparent;
-  padding:0.25vw 0.5vw;
-  text-align:left;
-  cursor:pointer;
-  color: var(--muted);
-  transition: transform 280ms, opacity 240ms, color 200ms;
-  transform-origin: left center;
-}
-
-/* Число / заголовок */
-.nav-item .num{
-    font-family: var(--krona);
+.nav-title {
+  font-weight: 700;
+  font-family: var(--montserrat);
+  text-transform: uppercase;
+  font-size: 3vw;
   color: #2D2D2D;
-  font-weight:400;
-  min-width:1vw;
-  text-align:left;
-}
-.nav-item .title{opacity:0.9;}
-
-/* Размеры: active > neighbor > small > hidden */
-.nav-item.size-large{  font-family: var(--montserrat); line-height: 113.9%; letter-spacing: 0%; transform: scale(1); font-size:2.5vw; color: #2D2D2D; font-weight:600; width: 20vw;}
-.nav-item.size-medium{ font-family: var(--montserrat); line-height: 113.9%; letter-spacing: 0%; transform: scale(.92); font-size:1.5vw; color:#828282; font-weight:600;}
-.nav-item.size-small{ font-family: var(--montserrat); line-height: 113.9%; letter-spacing: 0%; transform: scale(.8); font-size:1vw; color:#B1B1B1; font-weight:600;}
-.nav-item.hidden{ font-family: var(--montserrat); line-height: 113.9%; letter-spacing: 0%; transform: translateX(10px) scale(.7); }
-
-.nav-item img {
-  display: block;
-  margin: 0vw; /* Отступ от текста */
-  width: 2.75vw; /* Базовый размер */
-  height: 2.625vw;
-  object-fit: contain;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  will-change: transform;
-}
-
-.nav-item.size-large img {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.nav-item.size-medium img {
-  transform: scale(0.7);
-  opacity: 0.85;
-}
-
-.nav-item.size-small img {
-  transform: scale(0.5);
-  opacity: 0.7;
-}
-
-.nav-item.hidden img {
-  transform: scale(0.6);
-  opacity: 0.5;
-}
-
-/* Final — отдельный стиль, внизу */
-.nav-final{
-    font-family: var(--krona);
-    font-size: 2.5vw;
-  color: #2D2D2D;
-  line-height: 113.9%;
-  letter-spacing: 0%;
-  margin-top: auto; 
-  font-weight:400;
-  justify-content:flex-start;
-}
-
-.side-nav .nav-final {
+  line-height: 120%;
+  opacity: 0;
+  transform: translateY(0.75vw);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
   position: absolute;
-  left: 6.25vw;                /* соответствует .nav-inner padding-left */
-  bottom: 13.75vw;              /* по вкусу */
-  width: calc(100% - 3.5vw);  /* занимает остальную ширину */
-  height: 3.5vw;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  pointer-events: auto;
-  transition: transform 200ms, color 160ms;
+  top: 0;
+  left: 0;
 }
 
-/* Фокус / hover */
-.nav-item:focus, .nav-item:hover{ outline:none; }
-
-
-
-
-
+.nav-title.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: absolute;
+}
 
 
 .more-proj {
@@ -810,7 +715,7 @@ svg text {
 }
 
 .button-group-2 {
-  margin-top: 38.5%;
+  margin-top: 37.8%;
   margin-left: 0.442%;
   position: absolute;
   display: flex;
@@ -849,6 +754,24 @@ svg text {
 }
 
 .btn-wht:hover {
+  background-color: #2D2D2D;
+  color: #FFFFFF;
+}
+
+.btn-wht-2 {
+  font-family: var(--montserrat);
+  font-weight: 600;
+  padding: 0.25vw 0.62vw;
+  background-color: #FFFFFF;
+  color: #2D2D2D;
+  text-decoration: none;
+  border-radius: 0.563vw;
+  font-size: 0.75vw;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.btn-wht-2:hover {
   background-color: #2D2D2D;
   color: #FFFFFF;
 }
@@ -919,18 +842,20 @@ svg text {
 }
 
 .action::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: 0;
   left: 0;
-  width: 0; 
-  height: 2px; 
-  background-color: #FFFFFF; 
-  transition: width 0.3s ease-in-out; 
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.15, 0.85, 0.25, 1);
 }
 
 .action:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .bottom-section {
