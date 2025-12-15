@@ -8,54 +8,62 @@
 </head>
 <body>
 
+<div class="circle-btn">
+  <div class="circle-center">
+    <img src="images/Arrow 27.svg" alt="">
+  </div>
 
-<div id="circularButton" class="fixed-bottom-right">
-  <div class="arrow-container">
-    <img src="images/Arrow 27.svg" alt="Стрелка" class="arrow">
-  </div>
-  <div class="text-container">
-<svg overflow="visible" width="6vw" height="6vw" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path id="circlePath" d="M50,10 A40,40 0 1,1 50,90 A40,40 0 1,1 50,10" fill="none" stroke="transparent"/>
-  <text font-size="0.875vw" font-family="Montserrat">
-    <textPath href="#circlePath" textLength="100%" startOffset="0%">
-    &middot;обсудить проект&middot;обсудить проект
-    </textPath>
-  </text>
-</svg>
-  </div>
+  <svg class="circle-text" viewBox="0 0 200 200">
+    <defs>
+      <path
+        id="textCircle"
+        d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"
+      />
+    </defs>
+
+    <text>
+      <textPath href="#textCircle" 
+      textLength="471"
+      lengthAdjust="spacing"
+      startOffset="0">
+      &nbsp;обсудить проект • обсудить проект •
+      </textPath>
+    </text>
+  </svg>
 </div>
 
+<div class="hero-block">
     <section class="hero-content">
-    <img src="images/olen-logo.png" alt="">
-    <div class="hero-overlay">
-      <div class="logo-container">
-        <a href="" target="_blank">
-          <img src="images/Group white.svg" alt="Логотип 2kie">
-        </a>
-      </div>
-      <div class="nav-wrapper">
-    <div class="vertical-links">
-      <a href="/case.html" class="nav-link">Кейсы</a>
-      <a href="/uslugi.html" class="nav-link">Услуги</a>
-      <a href="/index.html" class="nav-link">Студия</a>
-    </div>
-  </div>
+    <img src="images/olen-logo.png" alt="" class="hero-img">
       <div class="mute-btn" id="muteBtn">
-        <img src="images/mute-Vector.svg" alt="Mute">
+        <img src="images/mute-Vector.svg" alt="Mute" class="mute-img">
       </div>
-    </div>
     <div class="play-btn" id="playBtn">
         <img src="images/play.svg" alt="Play" class="btn-play">
     </div>
     <div class="button-group-2">
-      <a href="#" class="btn-wht">Branding</a>
-      <a href="#" class="btn-wht">Logo</a>
+      <a href="#" class="btn-wht-2">Брендинг</a>
+      <a href="#" class="btn-wht-2">Логотип</a>
     </div>
     </section>
+    <section class="comp-block">
+        <div class="nav-wrapper fade-on-scroll">
+    <div class="vertical-links">
+      <a href="/cases" class="nav-link">Кейсы</a>
+      <a href="/uslugi.html" class="nav-link">Услуги</a>
+      <a href="/index.html" class="nav-link">Студия</a>
+    </div>
+    <a href="" class="telegram-link">tg: @studio</a>
+  </div>
+    <div class="logo-block fade-on-scroll">
+        <img src="images/Group 17.svg" alt="2kie Digital Agency">
+    </div>
+    </section>
+</div>
     <section class="info-block">
 <div class="case-wrapper">
   <main class="case-left">
-    <section id="s1" class="case-section">
+    <section id="s1" class="case-section" data-nav-title="О проекте">
       <div class="cs-1">
         <h2>Олень - лучший глемпинг Тулы</h2>
         <p class="p1">Дизайн и разработка цифровых сервисов, сайтов и приложений с нуля. Поиск новых решений для развития существующих продуктов</p>
@@ -71,7 +79,7 @@
         </div>
       </div>
     </section>
-    <section id="s2" class="case-section">
+    <section id="s2" class="case-section" data-nav-title="Дизайн">
       <div class="cs-2">
         <h2>Дизайн</h2>
         <p class="p1">Дизайн и разработка цифровых сервисов, сайтов и приложений с нуля. Поиск новых решений для развития существующих продуктов</p>
@@ -81,7 +89,7 @@
         <img src="images/Frame 1321318687.png" alt="" class="fs-1">
       </div>
     </section>
-    <section id="s3" class="case-section">
+    <section id="s3" class="case-section" data-nav-title="Команда">
       <div class="cs-3">
         <h2>Команда проекта</h2>
         <p class="p1">Дизайн и разработка цифровых сервисов, сайтов и приложений с нуля. Поиск новых решений для развития существующих продуктов</p>
@@ -93,42 +101,24 @@
         <img src="images/pusto.svg" alt="" class="pusto-img">
       </div>
     </section>
-    <section id="s5" class="case-section final"><h2>Final</h2><p></p></section>
+    <section id="s5" class="case-section final" data-nav-title="Финал"><h2>Final</h2><p></p></section>
   </main>
   <aside class="case-right" aria-label="Навигация по секциям">
     <div class="nav-inner">
-    <div class="track" id="track">
-      <div class="track-line" id="trackLine"></div>           <!-- вертикальная линия (будет динамичной высоты) -->
-      <div class="track-end-dot" id="trackEndDot"></div>      <!-- маленькая окружность внизу напротив Final -->
-      <div class="track-indicator" id="trackIndicator">       <!-- сам индикатор, внутри — connector -->
-      <div class="connector" id="indicatorConnector"></div>
-      <div class="connector-dot" id="connectorDot"></div>
-      </div>
-    </div>
+      <div class="nav-title-wrap">
+  <div class="nav-title active">О ПРОЕКТЕ</div>
+</div>
               <div class="video-block">
             <img src="images/Rectangle 422.png" alt="" class="b-video">
             <div class="podpis">О проекте</div>
+            <div class="tegi-v">
+            <div class="tegv"># Брендинг</div>
+            <div class="tegv"># Разработка</div>
+            </div>
             <div class="play-btn-2" id="playBtn">
               <img src="images/play.svg" alt="Play" class="btn-play2">
             </div>
           </div>
-      <nav class="side-nav" id="sideNav">
-        <button class="nav-item" data-target="s1"><span class="num">1.</span>
-          <img src="images/lp-1.svg" alt="">
-          <span class="title">Задача</span>
-        </button>
-        <button class="nav-item" data-target="s2"><span class="num">2.</span>
-          <img src="images/lp-1.svg" alt="">
-          <span class="title">Дизайн</span>
-        </button>
-        <button class="nav-item" data-target="s3"><span class="num">3.</span>
-          <img src="images/lp-1.svg" alt="">
-          <span class="title">Команда</span>
-        </button>
-        <!-- пустое пространство, final располагается отдельно -->
-        <div class="nav-spacer"></div>
-        <button class="nav-item nav-final" data-target="s5"><span class="num">Final</span></button>
-      </nav>
     </div>
   </aside>
 </div>
@@ -196,223 +186,106 @@
   </div>
 </footer>
 <script>
-const textPath = document.querySelector('svg textPath');
-const circlePath = document.getElementById('circlePath');
+const circleText = document.querySelector('.circle-text');
+const circleBtn  = document.querySelector('.circle-btn');
 
-const PATH_LENGTH = circlePath.getTotalLength();
-textPath.setAttribute('textLength', PATH_LENGTH);
+let lastScrollY = window.scrollY;
+let rotation = 0;
+let velocity = 0;
 
-let lastScrollY = window.pageYOffset;
-let offsetLength = 0;
-const SCROLL_SENSITIVITY = 0.1;
+// -----------------
+// НАСТРОЙКИ
+// -----------------
+const SCROLL_POWER = 0.02;   // влияние скролла
+const FRICTION = 0.9;       // мягкая инерция
+const HOVER_SHIFT = 70;      // насколько прокрутить при hover (градусы)
+const HOVER_EASE = 0.08;     // плавность наведения
 
-function updateTextPosition() {
-  const currentScrollY = window.pageYOffset;
-  const scrollDelta = currentScrollY - lastScrollY;
-  
-  offsetLength += scrollDelta * SCROLL_SENSITIVITY;
-  
-  let normalizedOffset = offsetLength % PATH_LENGTH;
-  if (normalizedOffset < 0) normalizedOffset += PATH_LENGTH;
-  
-  textPath.setAttribute('startOffset', normalizedOffset);
-  lastScrollY = currentScrollY;
+let hoverOffset = 0;
+let targetHoverOffset = 0;
+
+// -----------------
+// СКРОЛЛ
+// -----------------
+function onScroll() {
+  const currentY = window.scrollY;
+  const delta = currentY - lastScrollY;
+
+  velocity += delta * SCROLL_POWER;
+  lastScrollY = currentY;
 }
 
-let frameRequested = false;
-function onScroll() {
-  if (!frameRequested) {
-    frameRequested = true;
-    requestAnimationFrame(() => {
-      updateTextPosition();
-      frameRequested = false;
-    });
-  }
+// -----------------
+// HOVER
+// -----------------
+circleBtn.addEventListener('mouseenter', () => {
+  targetHoverOffset = HOVER_SHIFT;
+});
+
+circleBtn.addEventListener('mouseleave', () => {
+  targetHoverOffset = 0;
+});
+
+// -----------------
+// АНИМАЦИЯ
+// -----------------
+function animate() {
+  // основное вращение от скролла
+  rotation += velocity;
+  velocity *= FRICTION;
+
+  if (Math.abs(velocity) < 0.001) velocity = 0;
+
+  // плавный hover-сдвиг
+  hoverOffset += (targetHoverOffset - hoverOffset) * HOVER_EASE;
+
+  // итоговое вращение
+  const finalRotation = rotation + hoverOffset;
+  circleText.style.transform = `rotate(${finalRotation}deg)`;
+
+  requestAnimationFrame(animate);
 }
 
 window.addEventListener('scroll', onScroll);
+requestAnimationFrame(animate);
 </script>
- <script>
-(function () {
-  const sections = Array.from(document.querySelectorAll('.case-section'));
-  const navButtons = Array.from(document.querySelectorAll('.side-nav .nav-item:not(.nav-final)'));
-  const finalBtn = document.querySelector('.nav-final');
-  const track = document.getElementById('track');
-  const indicator = document.getElementById('trackIndicator');
-  const trackLine = document.getElementById('trackLine');
-  const trackEndDot = document.getElementById('trackEndDot');
-  const connector = document.getElementById('indicatorConnector');
-  const connectorDot = document.getElementById('connectorDot');
+<script>
+const circleBtn2 = document.querySelector('.circle-btn');
 
-  if (!sections.length || !track || !indicator || !trackLine || !trackEndDot) return;
+// -----------------
+// НАСТРОЙКИ В VW
+// -----------------
+const STOP_OFFSET_VW = 3;  // на сколько vw выше низа страницы кнопка остановится
 
-  let trackRect = null;
+function vwToPx(vw) {
+  return (vw / 100) * window.innerWidth;
+}
 
-  // Относительное смещение линии от верха track (в vw, как в CSS)
-  const lineTopVw = -11.875; // соответствует top: -11.875vw
+function updateButtonPosition() {
+  const scrollY = window.scrollY;
+  const windowH = window.innerHeight;
+  const docH = document.documentElement.scrollHeight;
 
-  function updateRects() {
-    trackRect = track.getBoundingClientRect();
+  const stopOffsetPx = vwToPx(STOP_OFFSET_VW);
+  const distanceToBottom = docH - (scrollY + windowH);
+
+  if (distanceToBottom < stopOffsetPx) {
+    const lift = stopOffsetPx - distanceToBottom;
+    circleBtn2.style.transform = `translateY(-${lift}px)`;
+  } else {
+    circleBtn2.style.transform = `translateY(0)`;
   }
+}
 
-  // Пересчитываем геометрию trackLine и trackEndDot
-  function updateTrackGeometry() {
-    updateRects();
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(updateButtonPosition);
+});
 
-    const finalRect = finalBtn.getBoundingClientRect();
-    const viewportWidth = window.innerWidth;
-    const vwUnit = viewportWidth / 100; // 1vw в пикселях
+window.addEventListener('resize', updateButtonPosition);
 
-    // Позиция начала линии (в пикселях)
-    const lineStartY = trackRect.top + (lineTopVw * vwUnit);
+updateButtonPosition();
+</script>
 
-    // Центр кнопки Final (в пикселях)
-    const finalCenterY = finalRect.top + finalRect.height / 2;
-
-    // Высота линии = расстояние от начала до центра Final
-    let lineHeight = finalCenterY - lineStartY;
-
-    // Ограничения (в пикселях)
-    const minLineHeight = 8;
-    const maxLineHeight = trackRect.height - (lineTopVw * vwUnit) - 8;
-
-    lineHeight = Math.max(minLineHeight, Math.min(maxLineHeight, lineHeight));
-
-    // Применяем высоту линии
-    trackLine.style.height = `${Math.round(lineHeight)}px`;
-
-    // Позиция центра trackEndDot (от верха track)
-    const endDotCenterY = (lineTopVw * vwUnit) + lineHeight;
-    trackEndDot.style.top = `${Math.round(endDotCenterY)}px`;
-  }
-
-  // Определяем индекс ближайшей секции к центру экрана
-  function getActiveSectionIndex() {
-    const center = window.scrollY + window.innerHeight / 2;
-    let nearest = 0;
-    let minDistance = Infinity;
-
-    sections.forEach((section, i) => {
-      const sectionTop = window.scrollY + section.getBoundingClientRect().top;
-      const sectionCenter = sectionTop + section.offsetHeight / 2;
-      const distance = Math.abs(sectionCenter - center);
-
-      if (distance < minDistance) {
-        minDistance = distance;
-        nearest = i;
-      }
-    });
-
-    return nearest;
-  }
-
-  // Обновляем визуальное состояние навигационных кнопок
-  function updateNavVisuals(activeIndex) {
-    navButtons.forEach((btn, i) => {
-      const dist = Math.abs(i - activeIndex);
-      btn.classList.remove('size-large', 'size-medium', 'size-small', 'hidden', 'active');
-
-      if (i === activeIndex) {
-        btn.classList.add('size-large', 'active');
-      } else if (dist === 1) {
-        btn.classList.add('size-medium');
-      } else if (dist === 2) {
-        btn.classList.add('size-small');
-      } else {
-        btn.classList.add('hidden');
-      }
-    });
-
-    if (activeIndex === sections.length - 1) {
-      finalBtn.classList.add('active');
-    } else {
-      finalBtn.classList.remove('active');
-    }
-  }
-
-  // Перемещаем индикатор к активной секции
-  function moveIndicatorTo(activeIndex) {
-    updateRects();
-
-    const localTrackTop = trackRect.top + window.scrollY;
-    let centerY = null;
-
-    if (activeIndex >= 0 && activeIndex < navButtons.length) {
-      const rect = navButtons[activeIndex].getBoundingClientRect();
-      centerY = window.scrollY + rect.top + rect.height / 2;
-    } else {
-      // Для Final
-      const finalRect = finalBtn.getBoundingClientRect();
-      centerY = window.scrollY + finalRect.top + finalRect.height / 2;
-    }
-
-    // Позиция центра индикатора внутри track
-    let centerInsideTrack = centerY - localTrackTop;
-    const min = 8;
-    const max = trackRect.height - 12;
-    centerInsideTrack = Math.max(min, Math.min(max, centerInsideTrack));
-
-    // Учитываем высоту индикатора (1.813vw → в пикселях)
-    const viewportWidth = window.innerWidth;
-    const indicatorHeightPx = (1.813 * viewportWidth) / 100;
-    const indicatorTop = centerInsideTrack - (indicatorHeightPx / 2);
-
-    indicator.style.top = `${Math.round(indicatorTop)}px`;
-  }
-
-  // Основной обработчик прокрутки
-  function onScroll() {
-    const active = getActiveSectionIndex();
-    updateNavVisuals(active);
-    moveIndicatorTo(active);
-  }
-
-  // Обработчики кликов
-  navButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const id = btn.getAttribute('data-target');
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
-  finalBtn.addEventListener('click', () => {
-    const id = finalBtn.getAttribute('data-target');
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-
-  // Обработчики событий
-  window.addEventListener('resize', () => {
-    updateTrackGeometry();
-    moveIndicatorTo(getActiveSectionIndex());
-  });
-
-  window.addEventListener('load', () => {
-    updateTrackGeometry();
-    moveIndicatorTo(getActiveSectionIndex());
-    // Небольшой таймаут на пересчет шрифтов/рендера
-    setTimeout(() => {
-      updateTrackGeometry();
-      moveIndicatorTo(getActiveSectionIndex());
-    }, 300);
-  });
-
-  window.addEventListener('scroll', () => {
-    if (!window._navTicking) {
-      window.requestAnimationFrame(() => {
-        onScroll();
-        window._navTicking = false;
-      });
-      window._navTicking = true;
-    }
-  }, { passive: true });
-
-  // Инициализация
-  updateTrackGeometry();
-  moveIndicatorTo(getActiveSectionIndex());
-})();
- </script>
  <script>
   document.addEventListener('DOMContentLoaded', function() {
   const images = document.querySelectorAll('img[data-tooltip]');
@@ -492,6 +365,78 @@ window.addEventListener('scroll', onScroll);
       // Если сейчас иконка «включено» — меняем на «выключено»
       img.src = muteIcon;
     }
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = Array.from(
+    document.querySelectorAll(".case-section[data-nav-title]")
+  );
+  const titleWrap = document.querySelector(".nav-title-wrap");
+
+  if (!sections.length || !titleWrap) return;
+
+  let currentId = null;
+
+  // ----------------------------
+  // УСТАНОВКА ЗАГОЛОВКА
+  // ----------------------------
+  function setNavTitle(text) {
+    const oldTitle = titleWrap.querySelector(".nav-title");
+
+    const newTitle = document.createElement("div");
+    newTitle.className = "nav-title";
+    newTitle.textContent = text;
+    titleWrap.appendChild(newTitle);
+
+    // триггер анимации
+    newTitle.offsetHeight;
+    newTitle.classList.add("active");
+
+    if (oldTitle) {
+      oldTitle.classList.remove("active");
+      setTimeout(() => oldTitle.remove(), 350);
+    }
+  }
+
+  // ----------------------------
+  // ОПРЕДЕЛЕНИЕ АКТИВНОЙ СЕКЦИИ
+  // ----------------------------
+  function updateActiveSection() {
+    const vh = window.innerHeight;
+    const triggerPoint = vh * 0.02;
+
+    let closestSection = null;
+    let minDistance = Infinity;
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const distance = Math.abs(rect.top - triggerPoint);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestSection = section;
+      }
+    });
+
+    if (!closestSection) return;
+    if (closestSection.id === currentId) return;
+
+    currentId = closestSection.id;
+    setNavTitle(closestSection.dataset.navTitle);
+  }
+
+  // ----------------------------
+  // ИНИЦИАЛИЗАЦИЯ
+  // ----------------------------
+  updateActiveSection();
+
+  // ----------------------------
+  // СЛУШАЕМ СКРОЛЛ (НЕ observer!)
+  // ----------------------------
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(updateActiveSection);
   });
 });
 </script>
