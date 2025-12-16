@@ -136,22 +136,22 @@
             <div class="image-container">
                 <img src="images/foto4.png" alt="Фото 1" class="photo-472" data-tooltip="Описание первой фотографии">
                 <div class="button-group">
-                <a href="#" class="btn-drk">Branding</a>
-                <a href="#" class="btn-drk">Logo</a>
+                <a href="#" class="btn-drk">Брендинг</a>
+                <a href="#" class="btn-drk">Логотип</a>
                 </div>
             </div>
             <div class="image-container">
                 <img src="images/foto5.png" alt="Фото 2" class="photo-472" data-tooltip="Описание первой фотографии">
                 <div class="button-group">
-                <a href="#" class="btn-drk">Branding</a>
-                <a href="#" class="btn-drk">Logo</a>
+                <a href="#" class="btn-drk">Брендинг</a>
+                <a href="#" class="btn-drk">Логотип</a>
                 </div>
             </div>
             <div class="image-container">
                 <img src="images/foto1.png" alt="Фото 3" class="photo-472" data-tooltip="Описание первой фотографии">
                 <div class="button-group">
-                <a href="#" class="btn-wht">Branding</a>
-                <a href="#" class="btn-wht">Logo</a>
+                <a href="#" class="btn-wht">Брендинг</a>
+                <a href="#" class="btn-wht">Логотип</a>
                 </div>
             </div>
         </div>
@@ -378,11 +378,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!sections.length || !titleWrap) return;
 
   let currentId = null;
+  let ticking = false;       // защита rAF
+  let isAnimating = false;  // защита анимации
 
   // ----------------------------
   // УСТАНОВКА ЗАГОЛОВКА
   // ----------------------------
   function setNavTitle(text) {
+    if (isAnimating) return;
+    isAnimating = true;
+
     const oldTitle = titleWrap.querySelector(".nav-title");
 
     const newTitle = document.createElement("div");
@@ -396,7 +401,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (oldTitle) {
       oldTitle.classList.remove("active");
-      setTimeout(() => oldTitle.remove(), 350);
+      setTimeout(() => {
+        oldTitle.remove();
+        isAnimating = false;
+      }, 350);
+    } else {
+      isAnimating = false;
     }
   }
 
@@ -433,10 +443,17 @@ document.addEventListener("DOMContentLoaded", () => {
   updateActiveSection();
 
   // ----------------------------
-  // СЛУШАЕМ СКРОЛЛ (НЕ observer!)
+  // СКРОЛЛ (С ЗАЩИТОЙ rAF)
   // ----------------------------
   window.addEventListener("scroll", () => {
-    requestAnimationFrame(updateActiveSection);
+    if (!ticking) {
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        updateActiveSection();
+        ticking = false;
+      });
+    }
   });
 });
 </script>
